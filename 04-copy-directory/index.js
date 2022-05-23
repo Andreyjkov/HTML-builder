@@ -1,10 +1,9 @@
-function copyDirectory () {
-  const fs = require('fs');
-  const path = require('path');
+const fs = require('fs');
+const path = require('path');
+const filesFolder = path.join(__dirname,'files');
+const copyFolder = path.join(__dirname, 'files-copy');
 
-  const filesFolder = path.join(__dirname,'files');
-  const copyFolder = path.join(__dirname, 'files-copy');
- 
+function copyDirectory () { 
   fs.rm(copyFolder, {force: true, recursive: true }, (err) => {
     if (err) throw err;  
 
